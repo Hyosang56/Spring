@@ -20,7 +20,6 @@ INDEX VERSION 1.134+D:\BigDataAI\SpringWorkspace\.metadata\.plugins\org.eclipse.
 3215588279.index
 3333129104.index
 3204169451.index
-1334368297.index
 854872588.index
 1465176515.index
 1654861890.index
