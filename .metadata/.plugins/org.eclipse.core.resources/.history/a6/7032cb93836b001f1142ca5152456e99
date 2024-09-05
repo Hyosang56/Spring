@@ -1,6 +1,5 @@
 package com.office.library.admin.member;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,10 +9,7 @@ public class AdminMemberService {
 	   final static public int ADMIN_ACCOUNT_CREATE_SUCCESS = 1;
 	   final static public int ADMIN_ACCOUNT_CREATE_FAIL = -1;
 	   
-//	   AdminMemberDao adminMemberDao = new AdminMemberDao();
-	   @Autowired
-	   AdminMemberDao adminMemberDao;
-	   
+	   AdminMemberDao adminMemberDao = new AdminMemberDao();
 	public AdminMemberService() {	
 	}
 	public int createAccountConfirm(AdminMemberVo adminMemberVo) 
