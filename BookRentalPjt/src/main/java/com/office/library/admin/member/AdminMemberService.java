@@ -42,5 +42,22 @@ public class AdminMemberService {
 	         
 	      }
 	   }//end of createAccountConfirm()
-
+	public AdminMemberVo loginConfirm(AdminMemberVo 
+	         adminMemberVo) 
+	   {
+	      System.out.println(
+	      "[AdminMemberService] loginConfirm() 메서드");
+	      
+	      AdminMemberVo loginedAdminMemberVo = 
+	      adminMemberDao.selectAdmin(adminMemberVo);
+	      
+	      if (loginedAdminMemberVo != null)
+	      System.out.println(
+	      "[AdminMemberService] ADMIN MEMBER LOGIN SUCCESS!!");
+	      else
+	      System.out.println(
+	      "[AdminMemberService] ADMIN MEMBER LOGIN FAIL!!");
+	      
+	      return loginedAdminMemberVo;      
+	   }//end of loginConfirm()
 }

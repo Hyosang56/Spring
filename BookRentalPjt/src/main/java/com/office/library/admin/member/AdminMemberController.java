@@ -1,7 +1,11 @@
 package com.office.library.admin.member;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -43,5 +47,45 @@ public class AdminMemberController {
 	      return nextPage;
 	      
 	   }//end of createAccountConfirm
+	   
+	   /*    * 로그인    */
+	   //@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
+	   @GetMapping("/loginForm")
+	   public String loginForm() {
+	      System.out.println(
+	      "[AdminMemberController] loginForm()");
+	      
+	      String nextPage = "admin/member/login_form";
+	      
+	      return nextPage;
+	      
+	   }
+	   /*    * 로그인 확인    */
+	   //@RequestMapping(value = "/loginConfirm", 
+	   //method = RequestMethod.POST)
+	   @PostMapping("/loginConfirm")
+	   public String loginConfirm(AdminMemberVo adminMemberVo, 
+	         HttpSession session)
+	   {
+	      System.out.println(
+	      "[AdminMemberController] loginConfirm() 메서드");
+	      
+	      String nextPage = "admin/member/login_ok";
+	      
+	      AdminMemberVo loginedAdminMemberVo = 
+	   adminMemberService.loginConfirm(adminMemberVo);
+	      
+	      if (loginedAdminMemberVo == null) {
+	         nextPage = "admin/member/login_ng";
+	         
+	      } 
+	      else {
+	         session.setAttribute("loginedAdminMemberVo", 
+	               loginedAdminMemberVo);
+	         session.setMaxInactiveInterval(60 * 30);         
+	      }
+	      
+	      return nextPage;      
+	   }//end of loginConfirm()
 
 }
