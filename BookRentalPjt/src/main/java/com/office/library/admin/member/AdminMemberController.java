@@ -145,5 +145,68 @@ public class AdminMemberController {
 	      return nextPage;
 	      
 	   }
+	   /*
+	    * 로그아웃 확인
+	    */
+	//   @RequestMapping(value = "/logoutConfirm", method = RequestMethod.GET)
+	   @GetMapping("/logoutConfirm")
+	   public String logoutConfirm(HttpSession session) {
+	      System.out.println("[AdminMemberController] logoutConfirm()");
+	      
+	      String nextPage = "redirect:/admin";
+	      
+	      session.removeAttribute("loginedAdminMemberVo");
+	      session.invalidate();
+	      
+	      return nextPage;
+	      
+	   }
+	   /*
+	    * 회원정보 수정
+	    */
+	//   @RequestMapping(value = "/modifyAccountForm", method = RequestMethod.GET)
+	   @GetMapping("/modifyAccountForm")
+	   public String modifyAccountForm(HttpSession session) {
+	      System.out.println("[AdminMemberController] modifyAccountForm()");
+	      
+	      String nextPage = "admin/member/modify_account_form";
+	      
+	      AdminMemberVo loginedAdminMemberVo = 
+	            (AdminMemberVo) session.getAttribute("loginedAdminMemberVo");
+	      if (loginedAdminMemberVo == null)
+	         nextPage = "redirect:/admin/member/loginForm";
+	      
+	      return nextPage;
+	      
+	   }
+	   /*
+	    * 회원정보 수정 확인
+	    */
+	//   @RequestMapping(value = "/modifyAccountConfirm", 
+	   //method = RequestMethod.POST)
+	   @PostMapping("/modifyAccountConfirm")
+	   public String modifyAccountConfirm(AdminMemberVo adminMemberVo, 
+	         HttpSession session) {
+	      System.out.println("[AdminMemberController] modifyAccountConfirm()");
+	      
+	      String nextPage = "admin/member/modify_account_ok";
+	      
+	      int result = adminMemberService.modifyAccountConfirm(adminMemberVo);
+	      
+	      if (result > 0) {
+	         AdminMemberVo loginedAdminMemberVo = 
+	      adminMemberService.getLoginedAdminMemberVo(adminMemberVo.getA_m_no());
+	         
+	         session.setAttribute("loginedAdminMemberVo", loginedAdminMemberVo);
+	         session.setMaxInactiveInterval(60 * 30);
+	         
+	      } else {
+	         nextPage = "admin/member/modify_account_ng";
+	         
+	      }
+	      
+	      return nextPage;
+	      
+	   }
 
 }
