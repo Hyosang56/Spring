@@ -43,6 +43,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\user\Downloads\BookRentalPjt (1)"/>
 			<item value="C:\Users\user\Downloads\ch08_ex05Pre"/>
 			<item value="C:\Users\user\Downloads\LegacyTemplatePjt"/>
 			<item value="D:\BigDataAI\SpringWorkspace\BookRentalPjt"/>
@@ -51,8 +52,8 @@
 			<item value=""/>
 		</list>
 		<section name="ExternalProjectImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="225"/>
-			<item key="DIALOG_Y_ORIGIN" value="186"/>
+			<item key="DIALOG_X_ORIGIN" value="226"/>
+			<item key="DIALOG_Y_ORIGIN" value="191"/>
 			<item key="DIALOG_WIDTH" value="525"/>
 			<item key="DIALOG_HEIGHT" value="710"/>
 			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

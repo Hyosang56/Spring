@@ -3,11 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<style type="text/css">
+		.node{
+			border: 1px solid black;
+			padding: 5px;
+			margin-bottom:3px;
+			margin-top:3px;
+		}
+	</style>
 </head>
 <body>
 	<div>
 		<input type="text" id="keyword">
 		<button onclick="searchNode()">검색</button>
+	</div>
+	<!-- 검색 결과 출력 DIV -->
+	<div id= "searchList">
+		<!-- 장소정보 DIV -->
+		<div class= "node">
+			<h3>장소이름1</h3>
+		</div>
+		
 	</div>
 	
 	<!-- jquery -->
@@ -31,13 +47,29 @@
 				dataType: 'json', //응답받을 형식
 				success: function(res){ //전송에 성공한 경우 
 					//res: 응답받은 데이터
-					console/log(res);
+					console.log(res); // 검색된 장소 목록
+					displayNodeList(res); //장소 출력 기능 호출
 				}
-				
-				
 			});
-			
 		}
+		//검색된 장소를 출력 기능
+		function displayNodeList(nodeList){
+			console.log("displayNodeList 호출")
+			//1. 출력을 할 요소 선택
+			const searchListDiv = documents.getElementById("searchList");
+			searchListDiv.innerHTML= ""; // 기존 출력 요소 삭제
+			//2. 출력할 장소정보를 분류
+			for(let node of nodeList){ 	//(let i=0; i< nodeList.length; i++)
+				let place_name= node.place_name;
+				//2-1 장소를 출력할 DIV 생성
+				let nodeDIV= document.createElement('div'); //<div></div>
+				nodeDIV.classList.add("node");  //<div class= "node">
+				nodeDIV.innerHTML= "<h3>"+place_name+"</h3>"; //<h3>장소이름</h3>
+				//2-2 선택된 DIV의 하위 요소로 추가
+				searchListDiv.appendChild(nodeDIV);
+			}
+		}
+		
 	</script>
 </body>
 </html>
