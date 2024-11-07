@@ -6990,3 +6990,115 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-11-06 21:07:52.756
 !MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!SESSION 2024-11-07 17:04:52.467 -----------------------------------------------
+eclipse.buildId=4.24.0.202407191504
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-07 17:04:58.718
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-11-07 17:05:05.408
+!MESSAGE Logback config file: D:\BigDataAI\SpringWorkspace\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-11-07 17:05:06.457
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-07 17:05:06.457
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-11-07 17:05:07.080
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-11-07 17:05:07.080
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-07 17:05:15.779
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+D:\BigDataAI\JSPEx\Install\InstallSpring\sts-4.24.0.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.3.v20240426-1530\jre\bin\javaw.exe
+-cp
+D:\BigDataAI\JSPEx\Install\InstallSpring\sts-4.24.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.56.0.202407191456\servers\spring-boot-language-server\BOOT-INF\classes;D:\BigDataAI\JSPEx\Install\InstallSpring\sts-4.24.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.56.0.202407191456\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:D:\BigDataAI\JSPEx\Install\InstallSpring\sts-4.24.0.RELEASE\plugins\org.springframework.tooling.boot.ls_1.56.0.202407191456\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=D:/BigDataAI/SpringWorkspace/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1730966715778
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:15.779
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-11-07 17:05:15.807
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 12960
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:21.867
+!MESSAGE Boot project ADDED: Api_241025
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:21.869
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:21.872
+!MESSAGE Started Boot LS process
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-11-07 17:05:21.974
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:21.983
+!MESSAGE Boot project ADDED: BookRentalPjt
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:22.012
+!MESSAGE Boot project ADDED: ch08_ex05Pre
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:22.022
+!MESSAGE Boot project ADDED: ch08_pjt_02
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:05:22.023
+!MESSAGE Boot project ADDED: demo
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:13:58.595
+!MESSAGE Classpath changed for project: BookRentalPjt
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:13:58.596
+!MESSAGE Boot project REMOVED: BookRentalPjt
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:14:54.420
+!MESSAGE Classpath changed for project: BookRentalPjt
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:14:54.750
+!MESSAGE Classpath changed for project: BookRentalPjt
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-11-07 17:14:59.643
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-11-07 17:14:59.687
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:14:59.833
+!MESSAGE Classpath changed for project: BookRentalPjt
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:14:59.849
+!MESSAGE Boot project ADDED: BookRentalPjt
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-11-07 17:15:00.745
+!MESSAGE Classpath changed for project: BookRentalPjt
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-11-07 17:15:01.415
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-11-07 17:15:01.458
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-11-07 17:58:51.064
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-11-07 17:58:51.087
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
