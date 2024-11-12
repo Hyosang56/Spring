@@ -14,6 +14,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\user\Downloads\ProblemFirstT\src\main\webapp\WEB-INF\views\resident\home.jsp"/>
 			<item value="D:\BigDataAI\SpringWorkspace\BookRentalPjt"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -56,11 +57,14 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="sprng5"/>
 			<item value="spring5"/>
 		</list>
 		<list key="name">
+			<item value="Ex01"/>
 		</list>
 		<list key="artifactId">
+			<item value="sprng5"/>
 			<item value="ch08_pjt_01"/>
 		</list>
 		<list key="projectNameTemplate">
