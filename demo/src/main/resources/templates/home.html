@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<!-- bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<style>
+			li.selectNode{
+				background-color: red;
+				color :white;
+				
+			}
+			
+		</style>
+		
+		
+	</head>
+	
+	<body>
+	
+		<div class=" my-3">
+
+			<div class="row">
+				<!-- 검색 및 결과 출력 -->
+				<div class="col-3">
+					<div class="text-bg-secondary mb-2 p-2 fw-bold rounded text-center">검색</div>
+					<!-- 검색어 입력 -->
+					<div class="input-group mb-3">
+					  <select id="category"
+					          style="max-width:100px;" 
+					          class="form-select" >
+					  	<option value="" selected>전체</option>
+					  	<option value="CS2">편의점</option>
+					  	<option value="CE7" >카페</option>
+					  	<option value="FD6">음식점</option>
+					  </select>
+					  
+					  <input type="text" class="form-control" 
+					         id="keyword"
+					         placeholder="검색어를 입력해주세요..." >
+					  <button class="btn btn-outline-secondary" 
+					          type="button" 
+					          onclick="searchNode()">검색</button>
+					</div>
+					
+					<!-- 검색 결과 출력 -->
+					<div id="searchList"></div>			
+				</div>
+				
+				<!-- 맵 출력 -->
+				<div class="col-6">
+					<div class="text-bg-secondary mb-2 p-2 fw-bold rounded text-center">지도</div>
+					<!-- 카카오 맵 DIV -->
+					<div id="map" style="width:100%; height:600px;"></div>
+				</div>
+
+				<div class="col-3">
+					<div class="text-bg-secondary mb-2 p-2 fw-bold rounded text-center">경로</div>
+					<div id="selectList" ></div>
+					<button class="w-100 btn btn-primary"
+						onclick="findRoutes()">경로 조회</button>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<!-- jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
+		<!-- 카카오 맵 JS -->
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5fe73c9dc4e522a50f51f878b6b7752a"></script>
+		<script type="text/javascript">
+		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+		var options = { //지도를 생성할 때 필요한 기본 옵션
+			center: new kakao.maps.LatLng(37.438788, 126.675045), //지도의 중심좌표.
+			level: 3 //지도의 레벨(확대, 축소 정도)
+		};
+		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+		
+		function panTo(y, x) {
+		    // 이동할 위도 경도 위치를 생성합니다 
+		    var moveLatLon = new kakao.maps.LatLng(y, x);
+		    // 지도 중심을 부드럽게 이동시킵니다
+		    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+		    map.panTo(moveLatLon);            
+		}  
+		
+		let marker = null;
+		function setMarker(y,x){
+			if(marker != null){
+				marker.setMap(null);   
+			}
+			
+			// 마커가 표시될 위치입니다 
+			var markerPosition  = new kakao.maps.LatLng(y, x); 
+
+			// 마커를 생성합니다
+			marker = new kakao.maps.Marker({
+			    position: markerPosition
+			});
+			marker.setMap(map);
+		}
+		</script>
+
+		<script type="text/javascript">
+			/* 키워드로 장소 조회 기능 */
+			function searchNode(){
+				console.log('searchNode() 호출');
+				//1.검색어를 controller로 전송
+				//1-1. 검색어를 입력하는 태그 선택(input태그)
+				let inputTag = document.getElementById('keyword'); 
+				console.log("입력한 검색어 : " + inputTag.value);
+				if(inputTag.value.length == 0){
+					alert("검색어를 입력 해주세요!");
+					inputTag.focus();
+					return;
+				}
+				// 선택한 카테고리 값
+				let selectTag = document.getElementById("category");
+				console.log("선택한 카테고리 : " + selectTag.value);
+				
+				//1-2. 카테고리와 검색어를 전송 ( ajax 이용 )
+				$.ajax( {
+					url : '/searchNodeByKeyword',  // action
+					type : 'get', 	// method  get, post
+					data : { keyword : inputTag.value,
+						    category : selectTag.value
+						   }, // 전송할 param      
+					dataType : 'json', // 응답받을 형식
+					success : function(res){ // 전송에 성공한 경우
+						// res : 응답받은 데이터
+						console.log(res); // 검색된 장소 목록
+						displayNodeList(res);// 장소 출력 기능 호출
+					}
+				} );
+			}
+			
+			/* 검색된 장소를 출력 기능 */
+			function displayNodeList(nodeList){
+				console.log("displayNodeList 호출");
+				//1. 출력을 할 요소 선택
+				const searchListDiv = document.getElementById("searchList");
+				searchListDiv.innerHTML = ""; // 기존 출력 요소 삭제
+				
+				//2. 장소정보를 분류, 출력
+				// ol 태그 생성
+				let olTag = document.createElement("ol");//<ol></ol>
+				olTag.classList.add("list-group", "list-group-numbered"); // <ol class="list-group list-group-numbered"></ol>
+				
+				for(let node of nodeList){  // (let i = 0; i < nodeList.length; i++)
+					let place_name = node.place_name; // //node Object에 있는 place_name 값
+					let x = node.x; //node Object에 있는 x 값
+					let y = node.y; //node Object에 있는 y 값
+ 					
+					//2-1 장소를 출력할 li태그 생성
+					let liTag = document.createElement("li"); // <li></li>
+					liTag.classList.add("list-group-item");// <li class="list-group-item"></li>
+					
+					/*
+					// 장소 선택 표시 효과
+					liTag.classList.add("list-group-item-action");
+					liTag.dataset.bsToggle = "list";
+					*/
+					
+					// li 태그에 클릭 이벤트 등록
+					// liTag.addEventListener( 이벤트종류, 실행함수 );
+					liTag.addEventListener("click", function (){
+						panTo(y, x); // 지도 이동 기능 호출	
+						setMarker(y, x)// 마커 표시 기능 호출
+						focusNode(liTag);
+						addSelectNodeList(node);// 경로 조회를 할 목록에 추가 기능 호출
+					});
+					
+					liTag.innerHTML = place_name; // <li class="list-group-item">인천일보아카데미</li>
+					//2-2 ol 태그에 추가
+					olTag.appendChild(liTag); //<ol> <li></li>  </ol>
+				}
+				//3. 화면에 출력
+				searchListDiv.appendChild(olTag);
+				
+			}
+			
+			function focusNode(selLiTag){
+				let liTagList = document.querySelectorAll("#searchList li");
+				for(let liTag of liTagList){
+					liTag.classList.remove("selectNode");
+				}
+				selLiTag.classList.add("selectNode");
+			}
+			// 경로 조회를 할 장소 추가 기능
+			function addSelectNodeList(node){
+				//1. 선택된 장소 목록을 출력하는 요소 선택
+				const selectListDiv = document.getElementById("selectList");
+				
+				// 추가할 장소가 목록에 포함되어 있는지 확인
+				// 매개변수 node의 id 값
+				console.log("추가 할 node Id : " + node.id);
+				// 현재 출력중인 선택 장소들의 데이터 속성인 data-nodeid와 같은 값이 있는지 확인
+				const selectNodeList = selectListDiv.querySelectorAll("div");
+
+				let checkNode = false; // 판별
+				for(let div of selectNodeList){
+					let dataNodeId = div.dataset.nodeid;
+					if(node.id == dataNodeId){
+						checkNode = true;
+					}
+				}
+				if(checkNode){
+					alert("이미 추가된 장소 입니다.");
+					return;
+				}
+
+				//2. 선택 장소 DIV 생성
+				let nodeDiv = document.createElement("div");
+				nodeDiv.classList.add("border", "p-2", "my-1", "rounded");
+				// div 데이터 속성 추가 ( data-nodeid="값" )
+				nodeDiv.dataset.nodeid = node.id;
+				nodeDiv.dataset.nodex= node.x;
+				nodeDiv.dataset.nodey= node.y;
+				nodeDiv.innerHTML = node.place_name;
+				// nodeDiv가 클릭이 되면 삭제 기능 호출
+				nodeDiv.addEventListener( "click" , function(){
+					let delCheck = confirm("삭제하시겠습니까?");
+					if( delCheck ){
+						nodeDiv.remove();
+					}
+				});
+				//3. 장소목록 선택 장소 DIV에 추가
+				selectListDiv.appendChild(nodeDiv);
+			}
+			
+			function findRoutes(){
+				/*
+				// 테스트용 더미 데이터( 5개의 장소 선택  )
+				let sampleData = [ { x:1.1, y:1.1, placeName: "장소1" }, 
+				                   { x:2.2, y:2.2, placeName: "장소2" }, 
+								   { x:3.3, y:3.3, placeName: "장소3" }, 
+								   { x:4.4, y:4.4, placeName: "장소4" },
+								   { x:5.5, y:4.4, placeName: "장소5" } ];
+				*/
+				
+				//1. 선택한 장소 목록 조회
+				const selectListDiv= document.querySelectorAll("#selectList div");
+				let dataArray=[];
+				for(let seleceNode of selectListDiv){
+					let node_x= seleceNode.dataset.nodex;
+					let node_y= seleceNode.dataset.nodey;
+					let node_placeName= seleceNode.innerHTML;
+					let data= {x: node_x, 
+								y: node_y,
+								placeName: node_placeName };
+					dataArray.push(data);
+				}
+				//2. x, y, 장소이름 데이터를 [{},{},..] 형식 변환
+				// 컨트롤러에 전송(비동기 요청)
+				$.ajax({
+					url:"/findRoutes",
+					type:"post",
+					contentType:"apllication/json",
+					data: JSON.stringify(sampleData),
+					dataType:"json",
+					success:function(res){
+						console.log(res);						
+					}
+					
+				});
+				
+			}
+			
+			
+			
+		</script>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
