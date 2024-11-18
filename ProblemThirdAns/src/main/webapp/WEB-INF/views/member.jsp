@@ -15,20 +15,19 @@
 </head>
 <body>
 	<h1>memJoinOk</h1>
-    <form action="/center/memberJoin" method="get">
+    <form >
         <label for="id">ID:</label>
-        <input type="text" id="id" name="id" /><br/>
+        <br/>
 
         <label for="pw">PW:</label>
-        <input type="password" id="pw" name="pw" /><br/>
+        <br/>
 
         <label for="mail">Mail:</label>
-        <input type="email" id="mail" name="mail" /><br/>
+        <br/>
 
         <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" /><br/>
-
-        <input type="submit" value="Go MemberJoin" />
+        <br/>
+        
     </form>
 
     <!-- 파란색 링크 -->
