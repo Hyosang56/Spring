@@ -11,5 +11,4 @@ public class Point {
 	private String y;
 	
 	private String placeName;
-
 }

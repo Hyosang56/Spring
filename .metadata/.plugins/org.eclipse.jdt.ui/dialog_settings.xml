@@ -80,4 +80,7 @@
 	</section>
 	<section name="BreadcrumbItemDropDown">
 	</section>
+	<section name="BuildPathsPropertyPage">
+		<item key="pageIndex" value="3"/>
+	</section>
 </section>

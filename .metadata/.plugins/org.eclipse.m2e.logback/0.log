@@ -3114,3 +3114,51 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2024-11-19 21:13:43,215 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-11-19 21:13:43,227 [Worker-39: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2024-11-19 21:13:43,229 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2024-11-21 17:10:00,379 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-11-21 17:10:05,556 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.office:center:1.0.0-BUILD-SNAPSHOT @ C:\Users\user\Downloads\ch08_ex05Pre\pom.xml.
+2024-11-21 17:10:05,839 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company.hello:friend:1.0.0-BUILD-SNAPSHOT @ C:\Users\user\Downloads\LegacyTemplatePjt\pom.xml.
+2024-11-21 17:10:05,946 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: edu.exercise:first:1.0.0-BUILD-SNAPSHOT @ C:\Users\user\Downloads\ProblemFirstT\pom.xml.
+2024-11-21 17:10:06,339 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company:center:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemThird\pom.xml.
+2024-11-21 17:10:06,463 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company:center:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemThirdAns\pom.xml.
+2024-11-21 17:10:06,643 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.office:library:1.0.0-BUILD-SNAPSHOT @ C:\Users\user\Desktop\BookRentalPjt\pom.xml.
+2024-11-21 17:10:06,954 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: edu.problem:second:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemSecond\pom.xml.
+2024-11-21 17:10:07,095 [Worker-7: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: edu.exercise:first:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\Problem_01\pom.xml.
+2024-11-21 17:10:11,495 [Worker-2: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-11-21 17:10:11,619 [Worker-2: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company:center:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemThirdAns\pom.xml.
+2024-11-21 17:10:13,070 [Worker-2: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/main/java
+2024-11-21 17:10:13,073 [Worker-2: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/main/resources
+2024-11-21 17:10:13,074 [Worker-2: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/test/java
+2024-11-21 17:10:13,075 [Worker-2: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/test/resources
+2024-11-21 17:10:14,669 [Worker-2: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ProblemThirdAns
+2024-11-21 17:10:14,813 [Worker-2: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 1.00 sec 
+2024-11-21 17:10:14,821 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-11-21 17:10:15,000 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company:center:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemThirdAns\pom.xml.
+2024-11-21 17:10:15,654 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/main/java
+2024-11-21 17:10:15,655 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/main/resources
+2024-11-21 17:10:15,656 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/test/java
+2024-11-21 17:10:15,657 [Worker-16: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/test/resources
+2024-11-21 17:10:16,049 [Worker-16: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ProblemThirdAns
+2024-11-21 17:10:16,075 [Worker-16: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 0.00 sec 
+2024-11-21 17:10:16,083 [Worker-13: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-11-21 17:10:16,241 [Worker-13: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company:center:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemThirdAns\pom.xml.
+2024-11-21 17:10:16,895 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/main/java
+2024-11-21 17:10:16,896 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/main/resources
+2024-11-21 17:10:16,897 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/test/java
+2024-11-21 17:10:16,898 [Worker-13: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/test/resources
+2024-11-21 17:10:17,304 [Worker-13: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ProblemThirdAns
+2024-11-21 17:10:17,328 [Worker-13: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 0.00 sec 
+2024-11-21 17:10:17,334 [Worker-15: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-11-21 17:10:17,497 [Worker-15: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.company:center:1.0.0-BUILD-SNAPSHOT @ D:\BigDataAI\SpringWorkspace\ProblemThirdAns\pom.xml.
+2024-11-21 17:10:18,234 [Worker-15: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/main/java
+2024-11-21 17:10:18,235 [Worker-15: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/main/resources
+2024-11-21 17:10:18,235 [Worker-15: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ProblemThirdAns/src/test/java
+2024-11-21 17:10:18,236 [Worker-15: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ProblemThirdAns/src/test/resources
+2024-11-21 17:10:18,601 [Worker-15: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for ProblemThirdAns
+2024-11-21 17:10:18,625 [Worker-15: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 0.00 sec 
+2024-11-21 17:10:19,610 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-11-21 17:10:19,634 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-11-21 17:10:20,166 [Worker-15: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-11-21 17:10:20,167 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\test\resources to target\test-classes
+2024-11-21 17:10:20,196 [Worker-15: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of ProblemThirdAns
+2024-11-21 17:10:20,198 [Worker-15: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for ProblemThirdAns
+2024-11-22 17:07:59,254 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
